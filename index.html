@@ -1,14 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=9.0">
-    <title>Hello Internet!</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=9.0">
+	<title>Hello Internet!</title>
+
+<!-- internal style sheet< html doc/dom itself-->>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 20px;
+			background-color: #f4f4f4;
+		}
+
+		h1 {
+			color: rgb(14, 174, 44);
+		}
+
+		h2{
+			color: rgb(19, 187, 50);
+			background-color: rgb(168, 232, 136);
+		}
+		 
+		
+		
+		.login-container {
+			border: solid 1px rgb(168, 232, 136);
+		}
+/* 
+		.form-group {
+			margin-bottom: 15px;
+		}
+
+		label {
+			display: block;
+			margin-bottom: 5px;
+		}
+
+		input[type="text"],
+		input[type="password"] {
+			width: 100%;
+			padding: 8px;
+			box-sizing: border-box;
+		}
+
+		.btn-login {
+			background-color: #28a745;
+			color: white;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			width: 100%;
+		}
+
+		.btn-login:hover {
+			background-color: #218838;
+		}
+
+		.message {
+			margin-top: 15px;
+			color: red;
+		} */
+	</style>
 </head>
+
 <body>
 
-   <h1> 😒hello internet!</h1> 
-    <p> From Christian</p>
+	<h1> 😒Hello internet!</h1>
+	<p class = "login-container"From Christian ></p>
+
+	<h2> Features </h2>
+	<ul>
+		<li>login</li>
+		<li>search</li>
+		<li>content "card"</li>
+		<li>footer</li>
+	</ul>
+	<!-- this is my vanilla html form> -->
+	<div class="login-container">
+		<h2 style = "color: turquoise"> Plain Login </h2>
+		<form id="loginForm">
+			<div class="form-group">
+				<label for="username">Username</label>
+				<input type="text" id="username" name="username" required>
+			</div>
+			<div class="form-group">
+				<label for="password">Password</label>
+				<input type="password" id="password" name="password" required>
+			</div>
+			<button type="submit" class="btn-login">Login</button>
+			<div id="message" class="message"></div>
+		</form>
+	</div>
+
+<script>
+
+console.log("Password is: 'lasagnaSocks'");
+
+</script>
+
 
 </body>
+
 </html>
