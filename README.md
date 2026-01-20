@@ -1,7 +1,10 @@
 # super-fiesta-dontknowyet
 # Some cool websites I want to pull ideas from:
-<img width="1222" height="885" alt="image" src="https://github.com/user-attachments/assets/6d3f914d-6c2a-4000-bca5-966e6c632a51" />
-<img width="1878" height="830" alt="image" src="https://github.com/user-attachments/assets/7ade7f95-214d-406e-9006-ada0fec85c28" />
-<img width="1683" height="900" alt="image" src="https://github.com/user-attachments/assets/0853d3b4-1396-4630-b3c6-26969f1cf57d" />
+# * Neat login page from Code Academy: 
+<img width="1661" height="770" alt="{82F081BD-52F2-426E-998C-8C85CAF06760}" src="https://github.com/user-attachments/assets/6584e7f7-2c6a-4538-9396-7b7ed1ee7a4f" />
+# * A reliable and intuitive search function from Wikipedia
+<img width="1101" height="689" alt="image" src="https://github.com/user-attachments/assets/fec8b38b-8b51-427a-a2f2-5e969a64dac5" />
+
+
 
 
