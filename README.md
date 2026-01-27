@@ -1,4 +1,4 @@
-# super-fiesta-dontknowyet
+# recipebook
 # Some cool websites I want to pull ideas from:
 # * Neat Card based pages from Allrecipes: 
 <img width="1736" height="779" alt="image" src="https://github.com/user-attachments/assets/676fe46b-aa6c-4e70-939c-cd3032f3c996" />
