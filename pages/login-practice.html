@@ -1,0 +1,37 @@
+<input type="text" placeholder ="user name">
+<input type="password" id = "password" placeholder="password">
+<button id="signin">sign in</button>
+
+<div id="message"></div>
+
+<script>
+
+// console.log(document.getElementById('signin'));
+const signin = document.getElementById("signin")
+
+// event calling a f/n: signin.addEventListener('click', verifyClick);
+
+//iife/immediately invoked f/n expression.
+//verbose IIFE: function() {code goes here}
+//arrow function 
+
+signin.addEventListener('click', () => {
+    console.log('in sign in button clicked button clicked');
+    //todo: collect stuff from dom
+    console.log(document.getElementById('password').placeholder); 
+
+
+    //todo: check the pwd, if scroobled let em pass, if else don't
+     if (userPassword === superSecurePassword){ 
+        document.getElementById('secretStuff').append = "user signed in, welcome!";
+     } else {
+        document.getElementById('message').innerText = "incorrect password, try again";
+     }
+});
+function verifyClick(){ 
+    console.log('button clicked');
+    // return 
+    veryifyClick();
+}
+</script>
+<div id="secretStuff"></div>    
