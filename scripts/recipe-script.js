@@ -1,3 +1,6 @@
+// This script handles the login form submission, stores the username and password in session storage, 
+// and redirects to the recipe index page.
+
 console.log("password is: recipe123");
 
 //when button clicked, get username and password. 
@@ -22,6 +25,6 @@ document.addEventListener('submit', function (event) {
   console.log('session username:', username);
   console.log('session password:', password);
 
-  window.location.assign("../recipe-index.html");
+  window.location.assign("../pages/recipe-content.html");
 //Templating: `hey${username}, welcome back!`
 });
