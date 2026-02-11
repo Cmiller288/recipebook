@@ -22,6 +22,6 @@ document.addEventListener('submit', function (event) {
   console.log('session username:', username);
   console.log('session password:', password);
 
-  window.location.assign("recipe-content.html"); 
-
+  window.location.assign("../recipe-index.html");
+//Templating: `hey${username}, welcome back!`
 });
