@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="container mt-5">
+
+    <h2>Session Dashboard</h2>
+    <p id="session-status"></p>
+
+    <a href="recipes.html" class="btn btn-primary">Back to Recipes</a>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const status = document.getElementById("session-status");
+
+            if (sessionStorage.getItem("loggedIn") === "true") {
+                status.textContent = "User is currently logged in.";
+            } else {
+                status.textContent = "User is not logged in.";
+            }
+
+            console.log("Dashboard session check complete");
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<input type="text" id="username" placeholder="user name">
+<input type="password" id="password" placeholder="password">
+<button id="signin">sign in</button>
+
+<div id="message"></div>
+
+<script>
+
+    const superSecurePassword = "password123";
+    const signin = document.getElementById("signin");
+
+    signin.addEventListener('click', () => {
+        console.log('sign in button clicked');
+        //todo: collect stuff from dom
+        const userPassword = document.getElementById('password').value;
+        console.log(document.getElementById('password').placeholder);
+
+        //todo: check the pwd, if scrambled let em pass, if else don't
+        if (userPassword === superSecurePassword) {
+            document.getElementById('secretStuff').innerText = "user signed in, welcome!";
+        } else {
+            document.getElementById('message').innerText = "incorrect password, try again";
+        }
+    });
+</script>
+<div id="secretStuff"></div>
