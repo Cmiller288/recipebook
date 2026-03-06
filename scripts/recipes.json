@@ -26,5 +26,13 @@
         "category": "Beef",
         "description": "Family-sized serving of Swedish meatballs.",
         "url": "../pages/recipe4.html"
+    },
+    {
+    
+        "id": 5,
+        "title": "Chocolate Chip Cookies",
+        "category": "Dessert",
+        "description": "Warm, chewy cookies loaded with chocolate chips.",
+        "url": "../pages/recipe5.html"
     }
 ]
