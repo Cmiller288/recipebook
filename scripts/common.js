@@ -75,8 +75,8 @@ function renderFooter() {
         <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
             <span class="mb-2 mb-md-0">@2026 My Personal Cookbook. All rights reserved.</span>
             <div>
-                <a href="https://github.com/username/repo" target="_blank" class="text-white me-3">View source</a>
-                <a href="https://github.com/username" target="_blank" class="btn btn-outline-light btn-sm">GitHub Profile</a>
+                <a href="https://github.com/username/repo" target="https://github.com/Cmiller288/recipebook/tree/main" class="text-white me-3">View source</a>
+                <a href="https://github.com/username" target="https://github.com/Cmiller288" class="btn btn-outline-light btn-sm">GitHub Profile</a>
             </div>
         </div>
     `;
@@ -88,4 +88,5 @@ window.addEventListener('DOMContentLoaded', () => {
     renderHeader();
     renderFooter();
     setupLogout();
+
 });
