@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "title": "Garlic Chicken",
+        "category": "Chicken",
+        "description": "Easy oven-baked garlic chicken.",
+        "url": "../pages/recipe1.html"
+    },
+    {
+        "id": 2,
+        "title": "Pizza",
+        "category": "Cheese",
+        "description": "An easy homemade pizza recipe.",
+        "url": "../pages/recipe2.html"
+    },
+    {
+        "id": 3,
+        "title": "Stuffed Pork Chops",
+        "category": "Pork",
+        "description": "Sweet and savory stuffed pork chops.",
+        "url": "../pages/recipe3.html"
+    },
+    {
+        "id": 4,
+        "title": "Swedish Meatballs",
+        "category": "Beef",
+        "description": "Family-sized serving of Swedish meatballs.",
+        "url": "../pages/recipe4.html"
+    },
+    {
+    
+        "id": 5,
+        "title": "Chocolate Chip Cookies",
+        "category": "Dessert",
+        "description": "Warm, chewy cookies loaded with chocolate chips.",
+        "url": "../pages/recipe5.html"
+    }
+]

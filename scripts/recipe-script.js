@@ -66,7 +66,7 @@
 
   async function loadRecipes() {
     try {
-      const response = await fetch('../scripts/recipes.json');
+      const response = await fetch('../assets/recipes.json');
       const data = await response.json();
       window.recipeData = data;
       return data;
