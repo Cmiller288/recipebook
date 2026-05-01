@@ -26,6 +26,29 @@
             </select>
         </section>
 
+        <section class="mb-4">
+            <div class="card p-4">
+                <h3 class="h5">Recipe Notes</h3>
+                <form id="note-form" class="row g-3">
+                    <div class="col-md-5">
+                        <label for="note-recipe" class="form-label">Recipe</label>
+                        <select id="note-recipe" class="form-select">
+                            <option value="">Choose a recipe</option>
+                        </select>
+                    </div>
+                    <div class="col-md-7">
+                        <label for="note-text" class="form-label">Personal note</label>
+                        <textarea id="note-text" class="form-control" rows="3" placeholder="Add your own cooking tips or reminders"></textarea>
+                    </div>
+                    <div class="col-12 text-end">
+                        <button type="submit" class="btn btn-secondary">Save Note</button>
+                    </div>
+                </form>
+                <div id="note-message" class="mt-3 text-success"></div>
+                <div id="saved-note" class="mt-3 text-muted"></div>
+            </div>
+        </section>
+
         <section>
             <div id="recipe-container" class="row"></div>
         </section>

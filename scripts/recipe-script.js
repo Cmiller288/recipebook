@@ -3,6 +3,9 @@
 (function () {
   'use strict';
 
+  const NOTE_STORAGE_KEY = 'recipeNotes';
+  let savedNotes = {};
+
   document.addEventListener('DOMContentLoaded', init);
 
   async function init() {
@@ -19,6 +22,7 @@
     const recipes = await loadRecipes();
     renderRecipes(recipes);
     bindControls();
+    setupRecipeNotes();
   }
 
   function handleLoginForm() {
@@ -32,6 +36,8 @@
       userInput.value = 'user';
       passInput.value = 'password';
     }
+
+    console.log('Demo credentials: username="user", password="password"');
 
     form.addEventListener('submit', function (event) {
       event.preventDefault();
@@ -131,6 +137,96 @@
         renderRecipes(sorted);
       });
     }
+  }
+
+  function setupRecipeNotes() {
+    const noteForm = document.getElementById('note-form');
+    if (!noteForm) return;
+
+    savedNotes = loadSavedNotes();
+    populateRecipeSelect();
+    renderSelectedRecipeNote();
+
+    noteForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      saveRecipeNote();
+    });
+
+    const noteRecipe = document.getElementById('note-recipe');
+    if (noteRecipe) {
+      noteRecipe.addEventListener('change', renderSelectedRecipeNote);
+    }
+  }
+
+  function populateRecipeSelect() {
+    const noteRecipe = document.getElementById('note-recipe');
+    if (!noteRecipe || !window.recipeData) return;
+
+    noteRecipe.innerHTML = '<option value="">Choose a recipe</option>';
+    window.recipeData.forEach(recipe => {
+      const option = document.createElement('option');
+      option.value = recipe.id;
+      option.textContent = recipe.title;
+      noteRecipe.appendChild(option);
+    });
+  }
+
+  function loadSavedNotes() {
+    try {
+      return JSON.parse(localStorage.getItem(NOTE_STORAGE_KEY) || '{}');
+    } catch (err) {
+      console.error('Failed to load saved notes:', err);
+      return {};
+    }
+  }
+
+  function saveRecipeNote() {
+    const recipeId = document.getElementById('note-recipe')?.value;
+    const noteText = document.getElementById('note-text')?.value.trim();
+    const noteMessage = document.getElementById('note-message');
+
+    if (!recipeId || !noteText) {
+      if (noteMessage) {
+        noteMessage.textContent = 'Please choose a recipe and enter a note before saving.';
+        noteMessage.style.color = 'red';
+      }
+      return;
+    }
+
+    savedNotes[recipeId] = {
+      recipeId,
+      note: noteText,
+      savedAt: new Date().toISOString()
+    };
+
+    localStorage.setItem(NOTE_STORAGE_KEY, JSON.stringify(savedNotes));
+    console.log('Saved recipe note JSON:', JSON.stringify(savedNotes, null, 2));
+
+    if (noteMessage) {
+      noteMessage.textContent = 'Recipe note saved locally and logged to the console.';
+      noteMessage.style.color = 'green';
+    }
+
+    renderSelectedRecipeNote();
+  }
+
+  function renderSelectedRecipeNote() {
+    const noteRecipe = document.getElementById('note-recipe');
+    const noteDisplay = document.getElementById('saved-note');
+    if (!noteRecipe || !noteDisplay) return;
+
+    const recipeId = noteRecipe.value;
+    if (!recipeId || !savedNotes[recipeId]) {
+      noteDisplay.textContent = 'No saved note for the selected recipe yet.';
+      return;
+    }
+
+    const note = savedNotes[recipeId];
+    const recipe = (window.recipeData || []).find(r => String(r.id) === String(recipeId));
+    noteDisplay.innerHTML = `
+      <p class="mb-1"><strong>Saved note for ${recipe ? recipe.title : 'selected recipe'}:</strong></p>
+      <p>${note.note}</p>
+    `;
   }
 
 })();

@@ -22,7 +22,7 @@
 
     async function loadRecipes() {
         try {
-            const r = await fetch('../scripts/recipes.json');
+            const r = await fetch('../assets/recipes.json');
             recipes = await r.json();
         } catch (err) {
             console.error('Failed to load recipes.json', err);
@@ -104,6 +104,13 @@
         if (categorySelect) {
             categorySelect.addEventListener('change', applyFilters);
         }
-        // logout is handled by common.js
+
+        const logoutBtn = document.getElementById('logout-btn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', () => {
+                sessionStorage.clear();
+                window.location.href = 'recipe-login.html';
+            });
+        }
     }
 })();
