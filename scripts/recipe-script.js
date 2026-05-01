@@ -144,6 +144,14 @@
     if (!noteForm) return;
 
     savedNotes = loadSavedNotes();
+
+    // Ensure recipe data is loaded before populating select
+    if (!window.recipeData || window.recipeData.length === 0) {
+      console.log('Recipe data not loaded yet, retrying in 100ms...');
+      setTimeout(setupRecipeNotes, 100);
+      return;
+    }
+
     populateRecipeSelect();
     renderSelectedRecipeNote();
 
@@ -160,8 +168,17 @@
 
   function populateRecipeSelect() {
     const noteRecipe = document.getElementById('note-recipe');
-    if (!noteRecipe || !window.recipeData) return;
+    if (!noteRecipe) {
+      console.error('note-recipe select element not found');
+      return;
+    }
 
+    if (!window.recipeData) {
+      console.error('window.recipeData is not available');
+      return;
+    }
+
+    console.log('Populating recipe select with', window.recipeData.length, 'recipes');
     noteRecipe.innerHTML = '<option value="">Choose a recipe</option>';
     window.recipeData.forEach(recipe => {
       const option = document.createElement('option');
@@ -169,6 +186,7 @@
       option.textContent = recipe.title;
       noteRecipe.appendChild(option);
     });
+    console.log('Recipe select populated successfully');
   }
 
   function loadSavedNotes() {
