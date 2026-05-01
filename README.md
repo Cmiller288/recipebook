@@ -86,19 +86,10 @@ This function captures a personal recipe note, serializes it as JSON, stores it 
 ## Deployment
 
 ### GitHub Pages
-- Publish the app using GitHub Pages from the repository.
-- If the project folder is not in the repository root, move the contents of `recipebook/` into the repo root or a `docs/` folder.
-- In the repository settings, choose Pages and set the source branch to `main` and the root to `/` or `/docs`.
-- Add the deployed GitHub Pages URL to the repository About section.
+- https://cmiller288.github.io/recipebook/
 
 ### GCP Deployment
-- Create a GCP VM instance with nginx installed.
-- Reserve an external IP and allow HTTP traffic on port 80.
-- Clone the repository to the VM, then copy the static app files into nginx's document root (for example, `/var/www/html/`).
-- Ensure the nginx site configuration points to the app folder and that `index.html` is served correctly.
-- Add the GCP external IP or public URL to the repository About section.
-
-> Both GitHub Pages and the GCP external IP must be included in the repo About section for submission.
+- http://34.162.254.98/index.html
 
 ## Future Improvements
 
